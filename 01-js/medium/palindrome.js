@@ -4,6 +4,22 @@
 */
 
 function isPalindrome(str) {
+  const formattedString = str.toLowerCase();
+  let s = 0;
+  let e = formattedString.length - 1;
+  while (s < e) {
+    if (formattedString[s] < "a" || formattedString[s] > "z") {
+      s++;
+      continue;
+    }
+    if (formattedString[e] < "a" || formattedString[e] > "z") {
+      e--;
+      continue;
+    }
+    if (formattedString[s++] != formattedString[e--]) {
+      return false;
+    }
+  }
   return true;
 }
 
